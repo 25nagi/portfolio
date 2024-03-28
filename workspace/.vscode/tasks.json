@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CUDA Program",
+            "type": "shell",
+            "command": "nvcc",
+            "args": [
+                "-o",
+                // "${workspaceFolder}\\prime\\prime_cuda.exe",
+                // "${workspaceFolder}\\prime\\prime_cuda.cu",
+                // "${workspaceFolder}\\prime\\prime_cuda_modified.exe",
+                // "${workspaceFolder}\\prime\\prime_cuda_modified.cu",
+                "${workspaceFolder}\\prime\\prime_cuda_csv.exe",
+                "${workspaceFolder}\\prime\\prime_cuda_csv.cu",
+                "-I",
+                "C:\\CUDA\\cuda-samples-11.8\\Common",
+                "-I",
+                "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.8\\include",
+                "-L",
+                "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.8\\lib\\x64",
+                "-lcudart"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiler task for CUDA program."
+        }
+    ]
+}
